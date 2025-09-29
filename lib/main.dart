@@ -44,9 +44,61 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            // Drawer Header
+            UserAccountsDrawerHeader(
+              accountName: const Text('AI Assistant'),
+              accountEmail: const Text('ai@chatapp.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Icon(Icons.smart_toy, color: Colors.blue, size: 40),
+              ),
+            ),
+
+            // Drawer Items
+            ListTile(
+              leading: const Icon(Icons.chat),
+              title: const Text('Chats'),
+              onTap: () {
+                Navigator.pop(context);
+                // Navigate to chats page
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.history),
+              title: const Text('History'),
+              onTap: () {
+                Navigator.pop(context);
+                // Navigate to history page
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+              onTap: () {
+                Navigator.pop(context);
+                // Navigate to settings page
+              },
+            ),
+            const Divider(),
+
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Logout'),
+              onTap: () {
+                Navigator.pop(context);
+                // Handle logout
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
-        centerTitle: true, ,
-          ,
+
+        centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
