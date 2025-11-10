@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterai/view/homepage.dart';
+import 'package:flutterai/view/chat_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system, // system ke hisaab se theme set ho jayega
-      home: const Homepage(),
+      home:ChatScreen()
     );
   }
 }
